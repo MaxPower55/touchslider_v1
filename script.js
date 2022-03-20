@@ -11,7 +11,7 @@ let slider = document.querySelector('.slider'),
     posX1 = 0,
     posX2 = 0,
     posFinal = 0,
-    posTreshold = slideWidth * 0.35,
+    posTreshold = slideWidth * 0.1,
     trfRegExp = /[-0-9.]+(?=px)/,
     slide = function() {
         sliderTrack.style.transition = 'transform 0.5s';
