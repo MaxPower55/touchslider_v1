@@ -1,20 +1,11 @@
-
-
-
-
-
-
-
 .slider {
     max-width: 600px;
-    height: 600px;
     margin: 0 auto;
     user-select: none;
     touch-action: pan-y;
 }
 .slider__list {
     max-width: 600px;
-    height: 600px;
     overflow: hidden;
 }
 .slider__list .grabbing {
@@ -26,17 +17,17 @@
 }
 .slide {
     width: 100%;
+    max-height: 400px;
     flex-shrink: 0;
     display: flex;
     align-items: center;
-    justify-content: center;
     position: relative;
 }
 .slide img {
     width: 100%;
     pointer-events: none;
+    object-fit: cover;
 }
-
 .slider__item__count {
     position: absolute;
     top: 20px;
@@ -45,9 +36,8 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: brown;
 }
-
 .slider__arrows {
-    margin-top: 20px;
+    margin-top: 10px;
     text-align: center;
 }
 .prev,

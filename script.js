@@ -16,9 +16,8 @@ let slider = document.querySelector('.slider'),
     slide = function() {
         sliderTrack.style.transition = 'transform 0.5s';
         sliderTrack.style.transform = 'translate3d(' + -(slideIndex * slideWidth) + 'px, 0px, 0px)';
-        // console.log(slideIndex * slideWidth);
         prev.classList.toggle('disabled', slideIndex === 0);
-        next.classList.toggle('disabled', slideIndex === (slides.length - 1));
+        next.classList.toggle('disabled', slideIndex === --slides.length);
     },
     getEvent = function () {
         return event.type.search('touch') !== -1 ? event.touches[0] : event;
@@ -36,10 +35,10 @@ let slider = document.querySelector('.slider'),
         let evt = getEvent(),
             style = sliderTrack.style.transform;
             transform = +style.match(trfRegExp)[0];
-            // console.log('transform: ' + transform + ', posX1: ' + posX2);
+            // console.log('transform: ' + transform + ', posX2: ' + posX2);
         posX2 = posX1 - evt.clientX;
         posX1 = evt.clientX;
-        sliderTrack.style.transform = 'translate3d(${transform - posX2}px, 0px, 0px)';
+        sliderTrack.style.transform = 'translate3d(' + (transform - posX2) + 'px, 0px, 0px)';
     },
     swipeEnd = function() {
         posFinal = posInit - posX1;
